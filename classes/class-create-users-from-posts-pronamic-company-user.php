@@ -1,5 +1,5 @@
 <?php
-class WP_Create_Users_From_Posts_Pronamic_Company_User extends Abstract_WP_Create_Users_From_Post_User {
+class Create_Users_From_Posts_Pronamic_Company_User extends Abstract_Create_Users_From_Posts_User {
 	
 	/**
 	 * Constructor

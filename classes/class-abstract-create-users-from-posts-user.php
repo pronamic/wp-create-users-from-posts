@@ -1,5 +1,5 @@
 <?php
-abstract class Abstract_WP_Create_Users_From_Post_User {
+abstract class Abstract_Create_Users_From_Posts_User {
 	
 	/**
 	 * @var int $user_id

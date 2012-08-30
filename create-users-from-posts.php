@@ -1,6 +1,6 @@
 <?php
 /*
- Plugin Name: WP Create Users From Posts
+ Plugin Name: Create Users From Posts
  Plugin URI: 
  Description: Gets the properties of a post and converts it to the properties of a user
  Version: 1.0.0
@@ -15,7 +15,7 @@
  * 
  * @version 22-08-12
  */
-class WP_Create_User_From_Post {
+class Create_Users_From_Posts {
 	
 	/**
 	 * Bootstraps the plugin
@@ -33,10 +33,10 @@ class WP_Create_User_From_Post {
 	static function admin_menu(){
 		add_submenu_page(
 			'tools.php',
-			__('Create Users from Posts', 'wp-create-users-from-posts-plugin'),
-			__('Users from Posts', 'wp-create-users-from-posts-plugin'),
+			__('Create Users from Posts', 'create-users-from-posts-plugin'),
+			__('Users from Posts', 'create-users-from-posts-plugin'),
 			'manage_options',
-			'wp-create-users-from-posts',
+			'create-users-from-posts',
 			array( __CLASS__, 'admin_page')
 		);
 	}
@@ -59,8 +59,8 @@ class WP_Create_User_From_Post {
 			isset( $_POST['role'] ) && $_POST['role'] != -1 ){
 			
 			// Include classes
-			include_once('classes/class-abstract-post-to-author-user.php');
-			include_once('classes/class-post-to-author-pronamic-company-user.php');
+			include_once('classes/class-abstract-create-users-from-posts-user.php');
+			include_once('classes/class-create-users-from-posts-pronamic-company-user.php');
 			
 			// Store generated users in results
 			$results = array();
@@ -75,7 +75,7 @@ class WP_Create_User_From_Post {
 				global $post;
 
 				// Build user
-				$user = new Post_To_Author_Pronamic_Company_User( $post );
+				$user = new Create_Users_From_Posts_Pronamic_Company_User( $post );
 				$user->set_variable('role', $_POST['role'] );
 				
 				// Save user and assign it to a post
@@ -102,7 +102,7 @@ class WP_Create_User_From_Post {
 	 */
 	static function localize(){
 		load_plugin_textdomain(
-			'wp-create-users-from-posts-plugin',
+			'create-users-from-posts-plugin',
 			false,
 			dirname(plugin_basename(__FILE__)) . '/languages/'
 		);
@@ -112,4 +112,4 @@ class WP_Create_User_From_Post {
 /*
  * Bootsrap application
  */
-WP_Create_User_From_Post::bootstrap();
+Create_Users_From_Posts::bootstrap();

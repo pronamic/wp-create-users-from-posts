@@ -1,4 +1,4 @@
-=== WP Create Users From Posts ===
+=== Create Users From Posts ===
 Contributors: Pronamic, RemcoTolsma, StefanBoonstra
 Tags: 
 Requires at least: 3.0
