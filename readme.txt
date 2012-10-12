@@ -1,5 +1,5 @@
 === Create Users From Posts ===
-Contributors: Pronamic, RemcoTolsma, StefanBoonstra
+Contributors: pronamic, remcotolsma, StefanBoonstra
 Tags: user, post, generate, create
 Requires at least: 3.0
 Tested up to: 3.4.1
