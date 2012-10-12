@@ -78,6 +78,15 @@ class Create_Users_From_Posts {
 				$user = new Create_Users_From_Posts_Pronamic_Company_User( $post );
 				$user->set_variable('role', $_POST['role'] );
 				
+				// Password
+				$meta_key_password = filter_input( INPUT_POST, 'meta_key_password', FILTER_SANITIZE_STRING );
+				$password = get_post_meta( $post->ID, $meta_key_password, true );
+				if ( empty( $password ) ) {
+					$password = wp_generate_password();
+				}
+				
+				$user->set_variable( 'user_pass', $password );
+				
 				// Save user and assign it to a post
 				$save_result = $user->save_user();
 				$assign_result = $user->assign_post_to_user();

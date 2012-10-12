@@ -31,6 +31,11 @@
 			</td>
 			<td><i><?php _e('The role the newly created users will receive.', 'create-users-from-posts-plugin'); ?></i></td>
 		</tr>
+		<tr>
+			<td><?php _e('Meta Key Password', 'create-users-from-posts-plugin'); ?></td>
+			<td><input type="text" name="meta_key_password" /></td>
+			<td><i><?php _e('Meta Key Password', 'create-users-from-posts-plugin'); ?></i></td>
+		</tr>
 	</table>
 	<?php submit_button( __('Convert Posts', 'create-users-from-posts-plugin') ); ?>
 </form>
