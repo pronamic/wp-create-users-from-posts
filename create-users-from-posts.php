@@ -5,7 +5,7 @@
  Description: Gets the properties of a post and converts it to the properties of a user
  Version: 0.1
  Requires at least: 3.0
- Author: Pronamic, RemcoTolsma, StefanBoonstra
+ Author: Pronamic
  Author URI: http://pronamic.eu/
  License: GPLv2
 */
