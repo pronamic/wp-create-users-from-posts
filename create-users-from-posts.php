@@ -20,31 +20,30 @@ class Create_Users_From_Posts {
 	/**
 	 * Bootstraps the plugin
 	 */
-	static function bootstrap(){
-		// Translate
-		add_action('init', array( __CLASS__, 'localize') );
+	static function bootstrap() {
+		add_action( 'init',       array( __CLASS__, 'localize' ) );
 		
-		add_action('admin_menu', array( __CLASS__, 'admin_menu') );
+		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ) );
 	}
 	
 	/**
 	 * Called on admin_menu hook. Adds admin pages.
 	 */
-	static function admin_menu(){
+	static function admin_menu() {
 		add_submenu_page(
 			'tools.php',
-			__('Create Users from Posts', 'create-users-from-posts-plugin'),
-			__('Users from Posts', 'create-users-from-posts-plugin'),
+			__( 'Create Users from Posts', 'create-users-from-posts-plugin' ),
+			__( 'Users from Posts', 'create-users-from-posts-plugin' ),
 			'manage_options',
 			'create-users-from-posts',
-			array( __CLASS__, 'admin_page')
+			array( __CLASS__, 'admin_page' )
 		);
 	}
 	
 	/**
 	 * Builds the post to author converter page
 	 */
-	static function admin_page(){
+	static function admin_page() {
 		// Roles
 		global $wp_roles;
 		$roles = $wp_roles->roles;
@@ -70,13 +69,14 @@ class Create_Users_From_Posts {
 				'post_type' => $_POST['post-type'],
 				'posts_per_page' => -1
 			) );
-			while( $query->have_posts() ) {
+
+			while ( $query->have_posts() ) {
 				$query->the_post();
 				global $post;
 
 				// Build user
 				$user = new Create_Users_From_Posts_Pronamic_Company_User( $post );
-				$user->set_variable('role', $_POST['role'] );
+				$user->set_variable( 'role', $_POST['role'] );
 				
 				// Password
 				$meta_key_password = filter_input( INPUT_POST, 'meta_key_password', FILTER_SANITIZE_STRING );
@@ -91,29 +91,29 @@ class Create_Users_From_Posts {
 				$save_result = $user->save_user();
 				$assign_result = $user->assign_post_to_user();
 				
-				if( ! is_wp_error( $save_result )  && $assign_result !== false )
+				if ( ! is_wp_error( $save_result )  && $assign_result !== false )
 					$results[] = array(
-						'post_id' => $post->ID,
-						'display_name' => $user->get_variable('display_name'),
-						'user_id' => $user->get_user_id(),
-						'user_login' => $user->get_variable('user_login'),
-						'user_email' => $user->get_variable('user_email'),
-						'user_pass' => $user->get_variable('user_pass')
+						'post_id'      => $post->ID,
+						'display_name' => $user->get_variable( 'display_name' ),
+						'user_id'      => $user->get_user_id(),
+						'user_login'   => $user->get_variable( 'user_login' ),
+						'user_email'   => $user->get_variable( 'user_email' ),
+						'user_pass'    => $user->get_variable( 'user_pass' )
 					);
 			}
 		}
 		
-		include_once('admin-page.php');
+		include_once 'admin-page.php';
 	}
 	
 	/**
 	 * Translates the plugin
 	 */
-	static function localize(){
+	static function localize() {
 		load_plugin_textdomain(
 			'create-users-from-posts-plugin',
 			false,
-			dirname(plugin_basename(__FILE__)) . '/languages/'
+			dirname( plugin_basename( __FILE__ ) ) . '/languages/'
 		);
 	}
 }
