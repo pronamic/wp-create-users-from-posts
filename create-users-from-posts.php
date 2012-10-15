@@ -16,7 +16,6 @@
  * @version 22-08-12
  */
 class Create_Users_From_Posts {
-	
 	/**
 	 * Bootstraps the plugin
 	 */
@@ -44,10 +43,13 @@ class Create_Users_From_Posts {
 	 * Builds the post to author converter page
 	 */
 	static function admin_page() {
+		// Time limit
+		set_time_limit( 0 );
+
 		// Roles
 		global $wp_roles;
 		$roles = $wp_roles->roles;
-		
+
 		// Post types
 		$post_types = get_post_types();
 		
@@ -56,18 +58,19 @@ class Create_Users_From_Posts {
 			isset( $_POST['post-type'] ) && $_POST['post-type'] != -1 &&
 			isset( $_POST['author'] ) && ! empty( $_POST['author'] ) &&
 			isset( $_POST['role'] ) && $_POST['role'] != -1 ){
-			
+
 			// Include classes
 			include_once('classes/class-abstract-create-users-from-posts-user.php');
 			include_once('classes/class-create-users-from-posts-pronamic-company-user.php');
 			
 			// Store generated users in results
 			$results = array();
-			
+
 			// Query
 			$query = new WP_Query( array(
-				'post_type' => $_POST['post-type'],
-				'posts_per_page' => -1
+				'post_type'      => $_POST['post-type'],
+				'posts_per_page' => 50,
+				'author_name'    => $_POST['author']
 			) );
 
 			while ( $query->have_posts() ) {
@@ -91,7 +94,7 @@ class Create_Users_From_Posts {
 				$save_result = $user->save_user();
 				$assign_result = $user->assign_post_to_user();
 				
-				if ( ! is_wp_error( $save_result )  && $assign_result !== false )
+				if ( ! is_wp_error( $save_result )  && $assign_result !== false ) {
 					$results[] = array(
 						'post_id'      => $post->ID,
 						'display_name' => $user->get_variable( 'display_name' ),
@@ -100,6 +103,7 @@ class Create_Users_From_Posts {
 						'user_email'   => $user->get_variable( 'user_email' ),
 						'user_pass'    => $user->get_variable( 'user_pass' )
 					);
+				}
 			}
 		}
 		
