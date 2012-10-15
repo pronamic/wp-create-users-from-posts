@@ -69,7 +69,7 @@ class Create_Users_From_Posts {
 			// Query
 			$query = new WP_Query( array(
 				'post_type'      => $_POST['post-type'],
-				'posts_per_page' => 50,
+				'posts_per_page' => 100,
 				'author_name'    => $_POST['author']
 			) );
 
