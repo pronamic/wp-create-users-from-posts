@@ -43,11 +43,12 @@ class Create_Users_From_Posts {
 	 * Builds the post to author converter page
 	 */
 	static function admin_page() {
+		global $wp_roles, $post;
+
 		// Time limit
 		set_time_limit( 0 );
 
 		// Roles
-		global $wp_roles;
 		$roles = $wp_roles->roles;
 
 		// Post types
@@ -75,7 +76,6 @@ class Create_Users_From_Posts {
 
 			while ( $query->have_posts() ) {
 				$query->the_post();
-				global $post;
 
 				// Build user
 				$user = new Create_Users_From_Posts_Pronamic_Company_User( $post );
