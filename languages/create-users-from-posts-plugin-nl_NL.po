@@ -2,18 +2,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Create Users From Posts\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-28 10:56+0100\n"
-"PO-Revision-Date: 2012-08-30 08:56+0100\n"
-"Last-Translator: Stefan Boonstra <stefanboonstra@hotmail.com>\n"
+"POT-Creation-Date: 2012-11-22 15:21+0100\n"
+"PO-Revision-Date: 2012-11-22 15:23+0100\n"
+"Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.eu>\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: create-users-from-posts.php:34
+msgid "Create Users from Posts"
+msgstr "Creëer gebruikers uit berichten"
+
+#: create-users-from-posts.php:35
+msgid "Users from Posts"
+msgstr "Gebruikers uit berichten"
 
 #: admin-page.php:1
 msgid "Create users from posts"
@@ -21,63 +29,71 @@ msgstr "Cre&#235;er gebruikers uit posts"
 
 #: admin-page.php:6
 msgid "Select Post Type"
-msgstr "Selecteer Post Type"
+msgstr "Selecteer bericht type"
 
-#: admin-page.php:9
-#: admin-page.php:26
+#: admin-page.php:9 admin-page.php:26
 msgid "None Selected"
-msgstr "Geen Geselecteerd"
+msgstr "Geen geselecteerd"
 
 #: admin-page.php:15
 msgid "Select the post type which you want to create users from."
-msgstr "Selecteer het post type van de posts waaruit je gebruikers wilt cre&#235;eren."
+msgstr ""
+"Selecteer het bericht type van de berichten waaruit je gebruikers wilt "
+"creëren."
 
-#: admin-page.php:18
-#: admin-page.php:49
+#: admin-page.php:18 admin-page.php:54
 msgid "Username"
 msgstr "Gebruikersnaam"
 
 #: admin-page.php:20
 msgid "Login username of the user whom's posts you'd like to convert."
-msgstr "Login gebruikersnaam van de gebruiker van wie je de posts wilt converteren."
+msgstr ""
+"Login gebruikersnaam van de gebruiker van wie je de berichten wilt "
+"converteren."
 
 #: admin-page.php:23
 msgid "Select Role"
-msgstr "Selecteer een rol"
+msgstr "Selecteer rol"
 
 #: admin-page.php:32
 msgid "The role the newly created users will receive."
 msgstr "De rol die de nieuwe gebruikers zullen ontvangen."
 
 #: admin-page.php:35
-msgid "Convert Posts"
-msgstr "Converteer Posts"
+msgid "Meta Key Password"
+msgstr "Meta sleutel wachtwoord"
 
-#: admin-page.php:46
+#: admin-page.php:37
+msgid ""
+"Retrieve the password from on post meta key field, leave empty to generate "
+"an new password."
+msgstr ""
+"Haal het wachtwoord uit een bericht meta veld, laat leeg om een nieuw "
+"wachtwoord te genereren."
+
+#: admin-page.php:40
+msgid "Generate Users"
+msgstr "Genereer gebruikers"
+
+#: admin-page.php:51
 msgid "Post ID"
-msgstr "Post ID"
+msgstr "Bericht ID"
 
-#: admin-page.php:47
+#: admin-page.php:52
 msgid "Name"
 msgstr "Naam"
 
-#: admin-page.php:48
+#: admin-page.php:53
 msgid "User ID"
 msgstr "Gebruiker ID"
 
-#: admin-page.php:50
+#: admin-page.php:55
 msgid "Email"
 msgstr "Email"
 
-#: admin-page.php:51
+#: admin-page.php:56
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: wp-create-users-from-posts.php:36
-msgid "Create Users from Posts"
-msgstr "Cre&#235;er Gebruikers uit Posts"
-
-#: wp-create-users-from-posts.php:37
-msgid "Users from Posts"
-msgstr "Gebruikers uit Posts"
-
+#~ msgid "Convert Posts"
+#~ msgstr "Converteer berichten"

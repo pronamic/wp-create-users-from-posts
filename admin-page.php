@@ -34,10 +34,10 @@
 		<tr>
 			<td><?php _e( 'Meta Key Password', 'create-users-from-posts-plugin' ); ?></td>
 			<td><input type="text" name="meta_key_password" /></td>
-			<td><i><?php _e( 'Meta Key Password', 'create-users-from-posts-plugin' ); ?></i></td>
+			<td><i><?php _e( 'Retrieve the password from on post meta key field, leave empty to generate an new password.', 'create-users-from-posts-plugin' ); ?></i></td>
 		</tr>
 	</table>
-	<?php submit_button( __( 'Convert Posts', 'create-users-from-posts-plugin' ) ); ?>
+	<?php submit_button( __( 'Generate Users', 'create-users-from-posts-plugin' ) ); ?>
 </form>
 
 <?php if ( isset( $_POST['submit'] ) ): ?>
