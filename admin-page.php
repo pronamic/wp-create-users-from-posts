@@ -24,7 +24,7 @@
 			<td>
 				<select name="role">
 					<option value="-1"> - <?php _e( 'None Selected', 'create-users-from-posts-plugin' ); ?> - </option>
-					<?php foreach ( $roles as $key => $role ): ?>
+					<?php foreach ( $roles as $key => $role ) : ?>
 						<option value="<?php echo $key; ?>"><?php echo $role['name']; ?></option>
 					<?php endforeach; ?>
 				</select>
