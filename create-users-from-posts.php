@@ -82,8 +82,13 @@ class Create_Users_From_Posts {
 				$user->set_variable( 'role', $_POST['role'] );
 				
 				// Password
+				$password = null;
+
 				$meta_key_password = filter_input( INPUT_POST, 'meta_key_password', FILTER_SANITIZE_STRING );
-				$password = get_post_meta( $post->ID, $meta_key_password, true );
+				if ( !empty( $meta_key_password ) ) {
+					$password = get_post_meta( $post->ID, $meta_key_password, true );
+				}
+
 				if ( empty( $password ) ) {
 					$password = wp_generate_password();
 				}
