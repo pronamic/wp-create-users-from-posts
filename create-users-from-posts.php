@@ -57,11 +57,11 @@ class Create_Users_From_Posts {
 		if( isset( $_POST['submit'] ) && $_POST['submit'] != -1 &&
 			isset( $_POST['post-type'] ) && $_POST['post-type'] != -1 &&
 			isset( $_POST['author'] ) && ! empty( $_POST['author'] ) &&
-			isset( $_POST['role'] ) && $_POST['role'] != -1 ){
+			isset( $_POST['role'] ) && $_POST['role'] != -1 ) {
 
 			// Include classes
-			include_once('classes/class-abstract-create-users-from-posts-user.php');
-			include_once('classes/class-create-users-from-posts-pronamic-company-user.php');
+			include_once 'classes/class-abstract-create-users-from-posts-user.php';
+			include_once 'classes/class-create-users-from-posts-pronamic-company-user.php';
 			
 			// Store generated users in results
 			$results = array();
