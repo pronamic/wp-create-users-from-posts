@@ -40,7 +40,7 @@
 	<?php submit_button( __( 'Generate Users', 'create-users-from-posts-plugin' ) ); ?>
 </form>
 
-<?php if ( isset( $_POST['submit'] ) ): ?>
+<?php if ( isset( $_POST['submit'] ) ) : ?>
 	<style type="text/css">
 		.create-users-from-posts-results td {
 			padding: 0 20px;
@@ -55,7 +55,7 @@
 			<th><?php _e( 'Email', 'create-users-from-posts-plugin' ); ?></th>
 			<th><?php _e( 'Password', 'create-users-from-posts-plugin' ); ?></th>
 		</tr>
-		<?php foreach ( $results as $result ): ?>
+		<?php foreach ( $results as $result ) : ?>
 			<tr>
 				<td><?php echo $result['post_id']; ?></td>
 				<td><?php echo $result['display_name']; ?></td>
