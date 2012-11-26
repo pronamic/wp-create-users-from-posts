@@ -23,7 +23,7 @@ GitHub URI: https://github.com/pronamic/wp-create-users-from-posts
  * 
  * @version 22-08-12
  */
-class Create_Users_From_Posts {
+class Pronamic_CreateUsersFromPosts_Plugin {
 	/**
 	 * Bootstraps the plugin
 	 */
@@ -138,4 +138,4 @@ class Create_Users_From_Posts {
 /*
  * Bootsrap application
  */
-Create_Users_From_Posts::bootstrap();
+Pronamic_CreateUsersFromPosts_Plugin::bootstrap();
