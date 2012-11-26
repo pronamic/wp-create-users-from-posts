@@ -3,11 +3,19 @@
 Plugin Name: Create Users From Posts
 Plugin URI: http://pronamic.eu/wordpress/create-users-from-posts/
 Description: Gets the properties of a post and converts it to the properties of a user
+
 Version: 0.1
 Requires at least: 3.0
+
 Author: Pronamic
 Author URI: http://pronamic.eu/
-License: GPLv2
+
+Text Domain: create-users-from-posts
+Domain Path: /languages/
+
+License: GPL
+
+GitHub URI: https://github.com/pronamic/wp-create-users-from-posts
 */
 
 /**
