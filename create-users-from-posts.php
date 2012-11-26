@@ -27,7 +27,7 @@ class Create_Users_From_Posts {
 	/**
 	 * Bootstraps the plugin
 	 */
-	static function bootstrap() {
+	public static function bootstrap() {
 		add_action( 'init',       array( __CLASS__, 'localize' ) );
 		
 		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ) );
@@ -36,7 +36,7 @@ class Create_Users_From_Posts {
 	/**
 	 * Called on admin_menu hook. Adds admin pages.
 	 */
-	static function admin_menu() {
+	public static function admin_menu() {
 		add_submenu_page(
 			'tools.php',
 			__( 'Create Users from Posts', 'create-users-from-posts-plugin' ),
@@ -50,7 +50,7 @@ class Create_Users_From_Posts {
 	/**
 	 * Builds the post to author converter page
 	 */
-	static function admin_page() {
+	public static function admin_page() {
 		global $wp_roles, $post;
 
 		// Time limit
@@ -126,7 +126,7 @@ class Create_Users_From_Posts {
 	/**
 	 * Translates the plugin
 	 */
-	static function localize() {
+	public static function localize() {
 		load_plugin_textdomain(
 			'create-users-from-posts-plugin',
 			false,
