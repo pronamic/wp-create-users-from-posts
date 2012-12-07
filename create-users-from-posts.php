@@ -32,12 +32,11 @@ class Pronamic_CreateUsersFromPosts_Plugin {
 	 * Called on admin_menu hook. Adds admin pages.
 	 */
 	public static function admin_menu() {
-		add_submenu_page(
-			'tools.php',
+		add_management_page(
 			__( 'Create Users from Posts', 'create_users_from_posts' ),
 			__( 'Users from Posts', 'create_users_from_posts' ),
 			'manage_options',
-			'create-users-from-posts',
+			'create_users_from_posts',
 			array( __CLASS__, 'admin_page' )
 		);
 	}
